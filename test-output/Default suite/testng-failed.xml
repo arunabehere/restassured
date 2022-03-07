@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.test.GETCalls">
+      <class name="com.qa.test.DeleteCalls">
         <methods>
-          <include name="responseFromList"/>
+          <include name="deleteExample"/>
         </methods>
-      </class> <!-- com.qa.test.GETCalls -->
+      </class> <!-- com.qa.test.DeleteCalls -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
