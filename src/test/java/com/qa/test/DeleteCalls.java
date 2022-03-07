@@ -2,10 +2,7 @@ package com.qa.test;
 
 import static io.restassured.RestAssured.when;
 
-import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
-
-import io.restassured.http.ContentType;
 
 public class DeleteCalls extends PostCalls {
 
