@@ -8,9 +8,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtil {
 	
-	public static String excelPath = "./resources/testdata.xlsx"; ///we can also use System.getProperty("user.dir")
+	//public static String excelPath = "./resources/testdata.xlsx"; ///we can also use System.getProperty("user.dir")
 	public static XSSFWorkbook wb ;
 	public static Sheet sh;
+	public static Object [][] dataArray;
 
 	public ExcelUtil(String excelPath , String sheetName)  {
 		try {
@@ -26,7 +27,7 @@ public class ExcelUtil {
 		return rowCount;
 	}
 
-	public void getCellData() throws IOException{
+	public Object [][] getCellData() throws IOException{
 		try {
 
 			DataFormatter df = new DataFormatter();
@@ -34,11 +35,13 @@ public class ExcelUtil {
 
 			for (int i=1; i<count; i++) {
 				for (int j=0; j<3; j++) {
-					Object value = df.formatCellValue(sh.getRow(i).getCell(j));
-					System.out.print("value is  ,"+value +" ");
+					Object value= df.formatCellValue(sh.getRow(i).getCell(j));
+					dataArray[i][j] = value;
 				}
 				System.out.println();
 			}	
+			
+			
 		}
 		catch(Exception e) {
 			e.printStackTrace();
@@ -46,10 +49,8 @@ public class ExcelUtil {
 		finally{
 			wb.close();
 		}
+		return dataArray;
 	}
 
-	public static void main (String args[]) throws IOException {
-		ExcelUtil util = new ExcelUtil(excelPath, "Sheet1");
-		util.getCellData();
-	}
+	
 }
