@@ -1,5 +1,7 @@
 package com.qa.test;
 
-public class EmployeeUpdateDetails {
+import com.qa.testbase.TestBase;
+
+public class EmployeeUpdateDetails extends TestBase {
 
 }
